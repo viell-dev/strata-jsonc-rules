@@ -26,3 +26,8 @@ pub use rules::{
 // sets without depending on `strata-json-rules` directly. `SharedRuleSet` is kind-generic
 // upstream, so it wraps JSONC rule sets too.
 pub use strata_json_rules::{JsonToken, SharedRuleSet};
+
+/// Compile-checks the README examples alongside the doctests.
+#[cfg(doctest)]
+#[doc = include_str!("../README.md")]
+mod readme {}
